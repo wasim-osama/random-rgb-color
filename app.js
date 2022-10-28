@@ -12,14 +12,18 @@ window.onload = function (){
 function main(){
     //steps 3
     let background = document.querySelector('.main');
-    let btn = document.querySelector('.chng-btn');
+    let chngbtn = document.querySelector('.chng-btn');
+    let copyBtn = document.querySelector('.copy-btn');
     let input = document.querySelector('.hex-input');
 
     //steps 4
-    btn.addEventListener('click',function (){
+    chngbtn.addEventListener('click',function (){
         let BgColor = ChangeRGBBg();
         background.style.backgroundColor = BgColor;
         input.value = BgColor;
+    })
+    copyBtn.addEventListener('click',function (){
+        navigator.clipboard.writeText(input.value);
     })
 }
 
